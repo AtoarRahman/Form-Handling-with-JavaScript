@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+	<div class="container">
+	  <div class="row">
+		<div class="col-md-6">
+			<div class="card p-5 mt-5">
+				<form name="myform" onsubmit="formFunction(); return false;">
+					  <div class="form-group">
+						<label for="gender"><strong>Gender:</strong></label><br/>
+						<select class="form-control" id="genderID"> 
+							 <option>Select</option>
+							 <option value="Male">Male</option>
+							 <option value="Female">Female</option>
+							 <option value="Third Gender">Third Gender</option>
+						</select>
+					  </div>
+					  <button type="submit" class="btn btn-success">Submit</button>
+					  <button type="reset" class="btn btn-info">Clear</button>
+				</form>
+			</div>
+		</div>
+		<div class="col-md-6">
+		  <div class="card p-5 mt-5">
+		  <p>Output:</p>
+			<div id="output" class="text-success mt-3"></div>
+		  </div>
+		</div>
+	  </div>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+		function formFunction(){
+			var index = document.getElementById('genderID').selectedIndex;
+			var getData = document.getElementById('genderID').options[index].value;
+			document.getElementById('output').innerHTML = getData;
+		}
+	</script>
+</body>
+</html>
